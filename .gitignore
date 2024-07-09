@@ -1,0 +1,13 @@
+# Ignore app.manifest
+app.manifest
+
+# Ignore the entire bin directory
+/bin/
+/obj/
+
+# Ignore the .vs directory (assuming it's at the root of your repository)
+.vs/
+
+# Ignore Package.appxmanifest
+Package.appxmanifest
+YoutubeDownloader.csproj
