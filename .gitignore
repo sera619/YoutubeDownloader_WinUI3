@@ -11,3 +11,4 @@ app.manifest
 # Ignore Package.appxmanifest
 Package.appxmanifest
 YoutubeDownloader.csproj
+YoutubeDownloader.csproj.user
