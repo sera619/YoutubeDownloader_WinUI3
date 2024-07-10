@@ -12,3 +12,5 @@ app.manifest
 Package.appxmanifest
 YoutubeDownloader.csproj
 YoutubeDownloader.csproj.user
+gitToken.txt
+PublishGithubRelease.bat
