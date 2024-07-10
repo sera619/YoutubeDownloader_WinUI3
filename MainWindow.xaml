@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window
+    x:Class="YoutubeDownloader.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:YoutubeDownloader"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    >
+
+    <Grid Background="#111">
+
+        <NavigationView Background="#222" x:Name="NaviView"
+                        PaneDisplayMode="Left"
+                        OpenPaneLength="200"
+                        Padding="5"
+                        SelectionChanged="NaviView_SelectionChanged"
+                        IsPaneToggleButtonVisible="False"
+                        IsSettingsVisible="True"
+                        IsBackButtonVisible="Collapsed"
+                        >
+            <NavigationView.PaneHeader>
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="0,20,0,20">
+                    <Image Source="/Assets/logo_transparent.png" Width="100" Height="100" />
+                    <TextBlock Text="Menu" FontSize="20"  HorizontalAlignment="Center"/>
+                </StackPanel>
+            </NavigationView.PaneHeader>
+            <NavigationView.MenuItems>
+                <NavigationViewItem IsSelected="True" Content="Home" Icon="Home" Tag="YoutubeDownloader.Pages.HomePage"/>
+                <NavigationViewItem Content="Video Download" Icon="Download" Tag="YoutubeDownloader.Pages.DownloadSinglePage" />
+                <NavigationViewItem Content="Playlist Download" Icon="List" Tag="YoutubeDownloader.Pages.DownloadPlaylistPage" />
+            </NavigationView.MenuItems>
+
+            <ScrollViewer>
+                <Frame x:Name="ContentFrame"
+                       CornerRadius="15">
+
+                </Frame>
+            </ScrollViewer>
+        </NavigationView>
+    </Grid>
+
+
+</Window>

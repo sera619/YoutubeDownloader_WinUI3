@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="YoutubeDownloader.Pages.SettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:YoutubeDownloader.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="#111">    
+    
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <StackPanel HorizontalAlignment="Center" Margin="0,40,0,20" Spacing="10" Orientation="Horizontal" Grid.Row="0">
+            <Image Source="/Assets/logo_transparent.png" Width="100" />
+            <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                <TextBlock FontSize="32" Foreground="WhiteSmoke" FontWeight="Bold" VerticalAlignment="Center" FontStyle="Oblique" Text="Youtube Downloader" />
+                <TextBlock x:Name="VersionTextBlock" FontSize="14" Foreground="Gray" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Version 1.2.3" />
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Width="500" Margin="0,20,0,0" Orientation="Horizontal" Spacing="10" VerticalAlignment="Center">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Spacing="5">
+                <TextBlock Text="Single savepath:" />
+                <TextBox x:Name="SingleSavepathBox" Width="415" PlaceholderForeground="Gray" PlaceholderText="Enter Single Save-Path..." />
+            </StackPanel>
+            <Button x:Name="ChangeSingleSavepathButton" VerticalAlignment="Bottom" Content="Change" Click="ChangeSingleSavepathButton_Click"/>
+        </StackPanel>
+        
+        
+        <StackPanel Grid.Row="2" Width="500" Margin="0,20,0,0" Orientation="Horizontal" Spacing="10" VerticalAlignment="Center">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Spacing="5">
+                <TextBlock Text="Playlist savepath:" />
+                <TextBox x:Name="PlaylistSavepathBox" Width="415" PlaceholderForeground="Gray" PlaceholderText="Enter Playlist Save-Path..." />
+            </StackPanel>
+            <Button x:Name="ChangePlaylistSavepathButton" VerticalAlignment="Bottom"  Content="Change" Click="ChangePlaylistSavepathButton_Click" />
+        </StackPanel>
+
+       <!--
+        <StackPanel Grid.Row="3" Width="500" Margin="0,20,0,0" Orientation="Horizontal" Spacing="10" VerticalAlignment="Center">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Spacing="5">
+                <TextBlock Text="Playlist Foldername:" />
+                <TextBox x:Name="PlaylistFoldernameBox" Width="498" PlaceholderForeground="Gray" PlaceholderText="Enter Playlist Save-Path..." />
+            </StackPanel>
+        </StackPanel>
+        -->
+
+        <StackPanel Grid.Row="4" Margin="0,20,0,0" Orientation="Horizontal" Spacing="10" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button x:Name="ResetDefaultButton" Content="Reset Default" Click="ResetDefaultButton_Click" />
+            <Button x:Name="SaveSettingsButton" Content="Save Settings" Click="SaveSettingsButton_Click" />
+        </StackPanel>
+    </Grid>
+</Page>

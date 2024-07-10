@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="YoutubeDownloader.Pages.DownloadSinglePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:YoutubeDownloader.Pages"
+    xmlns:src="using:YoutubeDownloader.Src"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="#111">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel HorizontalAlignment="Center" Margin="0,40,0,0" Spacing="10" Orientation="Horizontal" Grid.Row="0">
+            <Image Source="/Assets/logo_transparent.png" Width="100" />
+            <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                <TextBlock FontSize="32" Foreground="WhiteSmoke" FontWeight="Bold" VerticalAlignment="Center" FontStyle="Oblique" Text="Youtube Downloader" />
+                <TextBlock x:Name="VersionTextBlock" FontSize="14" Foreground="Gray" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Version 1.2.3" />
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center">
+            <TextBlock Text="Youtube Single Video Downloader" FontSize="16" FontWeight="Medium" Foreground="WhiteSmoke" Margin="0,10,0,0" />
+        </StackPanel>
+        <ScrollViewer  
+            CornerRadius="10"
+            BorderThickness="1"
+            BorderBrush="Red"
+            Margin="20,5,20,5"
+            Grid.Row="2" 
+            Height="300"
+            VerticalScrollBarVisibility="Auto">
+            <StackPanel HorizontalAlignment="Center" MinWidth="600" Orientation="Vertical">
+                <ListView Visibility="Visible" x:Name="VideoListView" HorizontalAlignment="Center" Margin="0,10,0,0"
+                   Padding="10"
+                   >
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="src:VideoInfo">
+                            <StackPanel CornerRadius="10" Padding="10" Orientation="Horizontal" Spacing="10" VerticalAlignment="Center">
+                                <TextBlock Text="{x:Bind Title}" Width="375" VerticalAlignment="Center" />
+                                <TextBlock Text="{x:Bind Duration}" Width="80" VerticalAlignment="Center" HorizontalTextAlignment="Right" />
+                                <Button Content="X" Click="RemoveEntry_Click" HorizontalAlignment="Right" Foreground="Red" Tag="{x:Bind}" Width="35" Height="35" CornerRadius="20" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
+        </ScrollViewer>
+
+        <StackPanel Grid.Row="3" Margin="0,10,0,0" Orientation="Vertical" Spacing="5">
+            <ProgressRing x:Name="VideoProgessRing" Width="75" Height="75" Foreground="Red" IsActive="False" Background="Transparent" />
+            <TextBlock x:Name="StatusTextBlock" Foreground="Red" FontSize="16" HorizontalTextAlignment="Center" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="4" Width="600" Margin="0,10,0,0" Orientation="Horizontal" Spacing="10" VerticalAlignment="Center">
+            <TextBox x:Name="UrlBox" Width="500" PlaceholderForeground="Gray" PlaceholderText="Enter Youtube URL..." />
+            <Button x:Name="AddToSingleListButton" VerticalAlignment="Center"  Content="Add to List" Click="AddToSingleListButton_Click" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,30" Spacing="10">
+            <Button x:Name="DownloadSingleVideoButton" Content="Download" Click="DownloadSingleVideoButton_Click" />
+            <Button x:Name="ClearSingleListButton" Content="Clear List" Click="ClearSingleListButton_Click" />
+            <Button x:Name="OpenSingleSavepathButton" Content="Open Directory" Click="OpenSingleSavepathButton_Click" />
+        </StackPanel>
+
+    </Grid>
+</Page>

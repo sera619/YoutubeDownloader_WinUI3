@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="YoutubeDownloader.Pages.HomePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:YoutubeDownloader.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="#111">
+
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20" Padding="40">
+        <StackPanel Orientation="Vertical" Spacing="5">
+            <Image Source="/Assets/logo_transparent.png" MaxHeight="400" MaxWidth="400"/>
+            <TextBlock x:Name="HomeInfoText"  Text="YTDownloader helps you to get your favorite music downloaded from youtube." FontSize="18" FontStyle="Oblique" TextWrapping="WrapWholeWords" TextAlignment="Center"/>
+            <TextBlock x:Name="HomeVersionText" Margin="0,20,0,20" Text="Version 2.4.0 © 2034 Development and Design S3R43o3" TextAlignment="Center" Foreground="Gray" />
+        </StackPanel>
+    </Grid>
+</Page>
