@@ -6,12 +6,11 @@ This application allows you to download YouTube playlists or individual YouTube 
 
 - **Download YouTube Playlists:** Easily download entire YouTube playlists with just a few clicks.
 - **Download Individual Files:** Download specific YouTube videos as MP3 audio files.
-- **Create Custom Playlists:** Organize your downloaded files into custom playlists within the application.
 - **User-Friendly Interface:** Built with WinUI 3 for a modern and intuitive user experience.
 
 ## Requirements
 
-- Windows 10 or higher
+- Windows x64 10 or higher
 - .NET 8.0
 - WinUI 3
 
